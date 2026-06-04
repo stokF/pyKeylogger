@@ -16,5 +16,5 @@ def trackActivity():
 
         for proc in psutil.process_iter(['pid', 'name']):
             print(f'Running process: {proc.info["name"]} (PID: {proc.info["pid"]})')
-
+            
             trackActivity()
