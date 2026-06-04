@@ -7,6 +7,7 @@ def activeKey(key):
         print(f'Specific key pressed: {key}')
 
 listener = keyboard.Listener(activeKey=activeKey)
+
 listener.start()
 listener.join()
 
