@@ -1,4 +1,4 @@
-from pynput import keyboard
+from pyinput import keyboard
 
 def activeKey(key):
     try:
