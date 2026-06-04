@@ -1,5 +1,1 @@
-2026-06-04 18:05:53 - Windows PowerShell
-2026-06-04 18:06:03 - Task Switching
-2026-06-04 18:06:08 - logs - File Explorer
-2026-06-04 18:06:13 - Windows PowerShell
-2026-06-04 18:06:23 - *Y1T1 - Notepad
+
